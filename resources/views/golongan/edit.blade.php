@@ -8,15 +8,14 @@
 </div>
 
 <div class="form-group">
-{!!Form::label('nama','Nama Golongan :')!!}
-{!!Form::text('nama_golongan',null,['class'=>'form-control'])!!}	
+   {!!Form::label('nama','Nama Golongan :')!!}
+   {!!Form::text('nama_golongan',null,['class'=>'form-control'])!!}	
 <div class="form-group">
-{!!Form::label('besaran','Besaran Uang :')!!}
-{!!Form::text('besaran_uang',null,['class'=>'form-control'])!!}	
-</div>
+   {!!Form::label('besaran','Besaran Uang :')!!}
+   {!!Form::text('besaran_uang',null,['class'=>'form-control'])!!}	
 </div>
 <div class="form-group">
-{!!Form::submit('Update',['class'=>'btn btn-primary'])!!}	
+   {!!Form::submit('Update',['class'=>'btn btn-primary'])!!}	
 </div>
-{!!Form::close()!!}
+  {!!Form::close()!!}
 @stop

@@ -14,6 +14,17 @@ class tunjanganController extends Controller
     public function index()
     {
         //
+        $tunjangan=tunjanganmodel::all();
+          $tunjangan=tunjanganmodel::where('jabatan_id',request('jabatan_id'))->paginate(0);
+          if(request()->has('jabatan_id'))
+          {
+            $tunjangan=tunjanganmodel::where('jabatan_id',request('jabatan_id'))->paginate(0);
+          }
+          else
+          {
+            $tunjangan=tunjanganmodel::paginate(3);
+          }
+        return view('tunjangan.index',compact('tunjangan'));
     }
 
     /**
@@ -24,6 +35,7 @@ class tunjanganController extends Controller
     public function create()
     {
         //
+        return view('tunjangan.create');
     }
 
     /**
@@ -35,6 +47,9 @@ class tunjanganController extends Controller
     public function store(Request $request)
     {
         //
+        $tunjangan=Request::all();
+        tunjanganmodel::create($tunjangan);
+        return redirect('tunjangan');
     }
 
     /**
@@ -57,6 +72,8 @@ class tunjanganController extends Controller
     public function edit($id)
     {
         //
+        $tunjangan=tunjanganmodel::find($id);
+        return view('tunjangan.edit',compact('tunjangan'));
     }
 
     /**
@@ -69,6 +86,10 @@ class tunjanganController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $update=Request::all();
+        $tunjangan=tunjanganmodel::find($id);
+        $tunjangan->update($update);
+        return redirect('tunjangan');
     }
 
     /**
@@ -80,5 +101,7 @@ class tunjanganController extends Controller
     public function destroy($id)
     {
         //
+        tunjanganmodel::find($id)->delete();
+        return redirect('tunjangan');
     }
 }

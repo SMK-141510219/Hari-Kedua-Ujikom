@@ -14,6 +14,8 @@ class lembur_pegawaiController extends Controller
     public function index()
     {
         //
+        $lemburpegawai=lemburpegawaimdel::all();
+        return view('lemburpegawai.index',compact('lemburpegawai'));
     }
 
     /**
@@ -24,6 +26,7 @@ class lembur_pegawaiController extends Controller
     public function create()
     {
         //
+        return view('lemburpegawai.create');
     }
 
     /**
@@ -35,6 +38,9 @@ class lembur_pegawaiController extends Controller
     public function store(Request $request)
     {
         //
+        $lemburpegawai=Request::all();
+        lemburpegawaimodel::create($lemburpegawai);
+        return redirect('lemburpegawai');
     }
 
     /**
@@ -57,6 +63,8 @@ class lembur_pegawaiController extends Controller
     public function edit($id)
     {
         //
+        $lemburpegawai=lemburpegawaimodel::find($id);
+        return view('lemburpegawai',compact('lemburpegawai'));
     }
 
     /**
@@ -69,6 +77,10 @@ class lembur_pegawaiController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $update=Request::all();
+        $lemburpegawai=lemburpegawaimodel::find($id);
+        $lemburpegawai->update($update);
+        return redirect('lemburpegawai');
     }
 
     /**
@@ -80,5 +92,7 @@ class lembur_pegawaiController extends Controller
     public function destroy($id)
     {
         //
+        lemburpegawaimodel::find($id)->delete();
+        return redirect('lemburpegawai');
     }
 }

@@ -14,6 +14,9 @@ class kategori_lemburController extends Controller
     public function index()
     {
         //
+         $kategorilembur=kategorilemburmodel::all();
+        return view('kategorilembur.index',compact('kategorilembur'));
+    }
     }
 
     /**
@@ -24,6 +27,7 @@ class kategori_lemburController extends Controller
     public function create()
     {
         //
+        return view('kategorilembur.create');
     }
 
     /**
@@ -35,6 +39,9 @@ class kategori_lemburController extends Controller
     public function store(Request $request)
     {
         //
+         $kategorilembur=Request::all();
+        kategorilemburmodel::create($kategorilembur);
+        return redirect('kategorilembur');
     }
 
     /**
@@ -57,6 +64,8 @@ class kategori_lemburController extends Controller
     public function edit($id)
     {
         //
+         $kategorilembur=kategorilemburmodel::find($id);
+        return view('kategorilembur',compact('kategorilembur'));
     }
 
     /**
@@ -69,6 +78,10 @@ class kategori_lemburController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $update=Request::all();
+        $kategorilembur=kategorilemburmdel::find($id);
+        $kategorilembur->update($update);
+        return redirect('kategorilembur');
     }
 
     /**
@@ -80,5 +93,7 @@ class kategori_lemburController extends Controller
     public function destroy($id)
     {
         //
+        kategorilemburmodel::find($id)->delete();
+        return redirect('kategorilembur');
     }
 }

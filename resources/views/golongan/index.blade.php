@@ -17,7 +17,7 @@
 		<tr class="bg-info">
 		<th><center>No</center></th>
 		<th>Kode Golongan</th>
-		<th><center>Nama </center></th>
+		<th><center>Nama Golongan</center></th>
 		<th><center>Besaran Uang</center></th>
 		<th colspan="3">Action</th>
 			

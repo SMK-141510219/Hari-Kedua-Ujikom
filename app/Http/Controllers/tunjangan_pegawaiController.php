@@ -14,6 +14,17 @@ class tunjangan_pegawaiController extends Controller
     public function index()
     {
         //
+        $tunjanganpegawai=tunjanganpegawaimodel::all();
+          $tunjanganpegawai=tunjanganpegawaimodel::where('pegawai_id',request('pegawai_id'))->paginate(0);
+          if(request()->has('pegawai_id'))
+          {
+            $tunjanganpegawai=tunjanganpegawaimodel::where('pegawai_id',request('pegawai_id'))->paginate(0);
+          }
+          else
+          {
+            $tunjanganpegawai=tunjanganpegawaimodel::paginate(3);
+          }
+        return view('tunjanganpegawai.index',compact('tunjanganpegawai'));
     }
 
     /**
@@ -24,6 +35,7 @@ class tunjangan_pegawaiController extends Controller
     public function create()
     {
         //
+        return view('tunjanganpegawai.create');
     }
 
     /**
@@ -35,6 +47,9 @@ class tunjangan_pegawaiController extends Controller
     public function store(Request $request)
     {
         //
+        $tunjanganpegawai=Request::all();
+        tunjanganpegawaimodel::create($tunjanganpegawai);
+        return redirect('tunjanganpegawai');
     }
 
     /**
@@ -57,6 +72,8 @@ class tunjangan_pegawaiController extends Controller
     public function edit($id)
     {
         //
+         $tunjanganpegawai=tunjanganpegawaimodel::find($id);
+        return view('tunjanganpegawai.edit',compact('tunjanganpegawai'));
     }
 
     /**
@@ -69,6 +86,10 @@ class tunjangan_pegawaiController extends Controller
     public function update(Request $request, $id)
     {
         //
+         $update=Request::all();
+        $tunjanganpegawai=tunjanganpegawaimodel::find($id);
+        $tunjanganpegawai->update($update);
+        return redirect('tunjanganpegawai');
     }
 
     /**
@@ -80,5 +101,7 @@ class tunjangan_pegawaiController extends Controller
     public function destroy($id)
     {
         //
+         tunjanganpegawaimodel::find($id)->delete();
+        return redirect('tunjanganpegawai');
     }
 }

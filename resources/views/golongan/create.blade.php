@@ -7,18 +7,15 @@
 	{!!Form::text('kode_golongan',null,['class'=>'form-control'])!!}
 </div>
 <div class="form-group">
-{!!Form::label('nama','Nama Golongan :')!!}
-{!!Form::text('nama_golongan',null,['class'=>'form-control'])!!}	
+   {!!Form::label('nama','Nama Golongan :')!!}
+   {!!Form::text('nama_golongan',null,['class'=>'form-control'])!!}	
 </div>
 <div class="form-group">
-{!!Form::label('besaran uang','Besaran Uang :')!!}
-{!!Form::text('besaran_uang',null,['class'=>'form-control'])!!}	
+   {!!Form::label('besaran uang','Besaran Uang :')!!}
+   {!!Form::text('besaran_uang',null,['class'=>'form-control'])!!}	
 </div>
-
 <div class="form-group">
-{!!Form::submit('Save',['class'=>'btn btn-primary form-control'])!!}
-
-	
+   {!!Form::submit('Save',['class'=>'btn btn-primary form-control'])!!}
 </div>
-{!!Form::close()!!}
+  {!!Form::close()!!}
 @stop

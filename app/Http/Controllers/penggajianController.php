@@ -14,6 +14,8 @@ class penggajianController extends Controller
     public function index()
     {
         //
+        $penggajian=penggajianModel::all();
+        return view('penggajian.index',compact('penggajian'));
     }
 
     /**
@@ -24,6 +26,7 @@ class penggajianController extends Controller
     public function create()
     {
         //
+        return view('penggajian.create');
     }
 
     /**
@@ -35,6 +38,9 @@ class penggajianController extends Controller
     public function store(Request $request)
     {
         //
+        $penggajian=Request::all();
+        penggajianmodel::create($penggajian);
+        return redirect('penggajian');
     }
 
     /**
@@ -46,6 +52,7 @@ class penggajianController extends Controller
     public function show($id)
     {
         //
+        
     }
 
     /**
@@ -57,6 +64,9 @@ class penggajianController extends Controller
     public function edit($id)
     {
         //
+         $penggajian=penggajianmodel::find($id);
+        return view('penggajian.edit',compact('penggajian'));
+
     }
 
     /**
@@ -69,6 +79,10 @@ class penggajianController extends Controller
     public function update(Request $request, $id)
     {
         //
+         $update=Request::all();
+        $penggajian=penggajianmodel::find($id);
+        $penggajian->update($update);
+        return redirect('penggajian');
     }
 
     /**
@@ -80,5 +94,7 @@ class penggajianController extends Controller
     public function destroy($id)
     {
         //
+        penggajianmodel::find($id)->delete();
+        return redirect('penggajian');
     }
 }
