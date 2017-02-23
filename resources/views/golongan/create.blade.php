@@ -1,4 +1,4 @@
-@extends('layouts.app')
+qqqqqqqqqqqqqqq@extends('layouts.app')
 @section('content')
 <h1>Tambah Data</h1>
 {!!Form::open(['url'=>'golongan'])!!}

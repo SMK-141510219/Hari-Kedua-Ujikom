@@ -3,7 +3,7 @@
 <h1>Update</h1>
 {!!Form::model($tunjangan,['method'=>'PATCH','route'=>['tunjangan.update',$tunjangan->id]])!!}
 <div class="form-group">
-	{!!Form::label('kode','Kode tunjangan:')!!}
+	{!!Form::label('kode','Kode Tunjangan:')!!}
 	{!!Form::text('kode_tunjangan',null,['class'=>'form-control'])!!}
 </div>
 
@@ -11,7 +11,7 @@
    {!!Form::label('jabatan','Jabatan id :')!!}
    {!!Form::text('jabatan_id',null,['class'=>'form-control'])!!}	
 <div class="form-group">
-    {!!Form::label('golongan','Golongan_id :')!!}
+    {!!Form::label('golongan','Golongan id :')!!}
     {!!Form::text('golongan_id',null,['class'=>'form-control'])!!}	
 </div>
 <div class="form-group">
@@ -19,7 +19,7 @@
    {!!Form::text('status',null,['class'=>'form-control'])!!}
 </div>
 <div class="form-group">
-    {!!Form::label('jumlah','Jumlah anak :')!!}
+    {!!Form::label('jumlah','Jumlah Anak :')!!}
     {!!Form::text('jumlah_anak',null,['class'=>'form-control'])!!}
 </div>
 <div class="form-group">

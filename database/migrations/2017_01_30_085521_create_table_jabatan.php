@@ -14,7 +14,7 @@ class CreateTableJabatan extends Migration
     public function up()
     {
         Schema::create('jabatan', function (Blueprint $table) {
-            $table->increments('id')->unsigned;
+            $table->increments('id');
             $table->string('kode_jabatan')->unique();
             $table->string('nama_jabatan');
             $table->integer('besaran_uang');

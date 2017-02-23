@@ -34,10 +34,10 @@
 			<td>{{$pegawais->nip}}</td>
 			<td>{{$pegawais->golonganModel->kode_golongan}}</td>
 			<td>{{$pegawais->jabatanModel->kode_jabatan}}</td>
+            
 
 
-
-	<td><img src="assets/image/{{$pegawais->foto}}" height="80" width="80"></td>
+	<td><img src="assets/image/{{$pegawais->Foto}}" height="80" width="80"></td>
 		>	
 		</td>
 
@@ -49,13 +49,7 @@
 		{!!Form::close()!!}
 		</td>
 		</tr>
-		
 		@endforeach
-
 	</tbody>
 </table>
-
-
-
-
-@endsection
+   @endsection

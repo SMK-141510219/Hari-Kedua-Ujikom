@@ -14,7 +14,7 @@
    {!!Form::label('besaran ','Besaran Uang :')!!}
    {!!Form::text('besaran_uang',null,['class'=>'form-control'])!!}	
 </div>
-
+</div>
 <div class="form-group">
   {!!Form::submit('Save',['class'=>'btn btn-primary form-control'])!!}
 	
